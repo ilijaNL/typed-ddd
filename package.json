@@ -1,0 +1,53 @@
+{
+  "name": "typed-ddd",
+  "author": "IlijaNL",
+  "version": "0.0.1",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "files": [
+    "./dist",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilijaNL/typed-ddd.git"
+  },
+  "keywords": [
+    "typescript",
+    "type-safe",
+    "events",
+    "ddd"
+  ],
+  "bugs": {
+    "url": "https://github.com/ilijaNL/typed-ddd/issues"
+  },
+  "homepage": "https://github.com/ilijaNL/typed-ddd#readme",
+  "scripts": {
+    "build": "tsup ./src/index.ts --format cjs,esm --dts",
+    "tc": "tsc --noEmit",
+    "ci:publish": "yarn build && changeset publish",
+    "test": "tap --ts --no-check-coverage  tests/*.test.ts",
+    "posttest": "tap --coverage-report=html --no-check-coverage"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@sinclair/typebox": "^0.31.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.26.0",
+    "@types/node": "^16.0.0",
+    "@types/tap": "^15.0.8",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.4.0",
+    "tap": "^16.3.4",
+    "ts-node": "^10.7.0",
+    "tsup": "^6.6.0",
+    "typescript": "^4.9.0"
+  }
+}
