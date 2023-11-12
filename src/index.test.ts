@@ -1,5 +1,5 @@
 import tap from 'tap';
-import { createAdapter, createDomain, TypeBox } from '../src/index';
+import { createAdapter, createDomain, TypeBox } from './index';
 
 tap.test('happy path', async ({ same }) => {
   const domain = createDomain({
